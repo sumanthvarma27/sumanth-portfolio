@@ -26,7 +26,7 @@ export function Hero() {
                     transition={{ duration: 0.5 }}
                     className="mb-8"
                 >
-                    <div className="relative flex h-32 w-32 items-center justify-center rounded-full border-4 border-primary/20 bg-background shadow-2xl">
+                    <div className="relative flex h-48 w-48 items-center justify-center rounded-full border-4 border-primary/20 bg-background shadow-2xl">
                         <Image
                             src="/profile-pastel.png"
                             alt="Sumanth Varma"
@@ -94,10 +94,10 @@ export function Hero() {
                     <Link href="https://github.com/sumanthvarma27" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
                         <Github className="h-6 w-6" />
                     </Link>
-                    <Link href="https://linkedin.com/in/sumanthvarma27" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
+                    <Link href="https://linkedin.com/in/sumanthvarma3009/" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
                         <Linkedin className="h-6 w-6" />
                     </Link>
-                    <Link href="mailto:varmasumanth009@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+                    <Link href="mailto:varma.gadiraju2001@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
                         <Mail className="h-6 w-6" />
                     </Link>
                 </motion.div>

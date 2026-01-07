@@ -34,7 +34,6 @@ export function Projects() {
                     </h2>
                     <p className="text-muted-foreground text-lg md:text-xl max-w-2xl leading-relaxed">
                         A curated selection of my work in distributed systems, AI agents, and full-stack engineering.
-                        Hover over a project to explore the details.
                     </p>
                 </motion.div>
 
@@ -57,7 +56,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="h-[400px] w-full"
+            className="aspect-square w-full"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
@@ -69,8 +68,8 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
                 {/* Note: Using a gradient overlay to ensure text readability */}
                 <div className="absolute inset-0 z-0">
                     <div className={cn(
-                        "absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent z-10 transition-all duration-500",
-                        isHovered ? "opacity-90" : "opacity-60"
+                        "absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent z-10 transition-all duration-500",
+                        isHovered ? "opacity-95 bg-background/95" : "opacity-60"
                     )} />
                     {/* If actual images differ from these paths, next/image might show alt. 
                         For now, we assume these paths might be placeholders, so we add a fallback stylistic approach */}
@@ -80,65 +79,40 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
                     )} />
                 </div>
 
-                <div className="absolute inset-0 z-20 flex flex-col p-8 h-full">
-                    {/* Top Content: Always Visible */}
-                    <div className="flex justify-between items-start">
-                        <div className="p-2 bg-primary/10 rounded-lg text-primary">
-                            <Layers className="h-6 w-6" />
+                <div className="absolute inset-0 z-20 flex flex-col p-6 h-full justify-between">
+                    {/* Top Content */}
+                    <div>
+                        <div className="flex justify-between items-start mb-4">
+                            <div className="p-2 bg-primary/10 rounded-lg text-primary">
+                                <Layers className="h-5 w-5" />
+                            </div>
+                            <div className="flex gap-2">
+                                <Link href={project.github} target="_blank" className="p-2 hover:text-primary transition-colors text-muted-foreground">
+                                    <Github className="h-5 w-5" />
+                                </Link>
+                                <Link href={`/projects/${project.slug}`} className="p-2 hover:text-primary transition-colors text-muted-foreground">
+                                    <ArrowRight className="h-5 w-5" />
+                                </Link>
+                            </div>
                         </div>
-                        {/* External Link Indicator */}
-                        <ExternalLink className={cn(
-                            "h-5 w-5 text-muted-foreground transition-all duration-300",
-                            isHovered ? "text-primary translate-x-1 -translate-y-1" : ""
-                        )} />
+                        <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                            {project.title}
+                        </h3>
                     </div>
 
-                    <div className="mt-auto relative z-30">
-                        <motion.div
-                            animate={{ y: isHovered ? -20 : 0 }}
-                            transition={{ duration: 0.3, ease: "easeInOut" }}
-                        >
-                            <h3 className="text-2xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                                {project.title}
-                            </h3>
-                            <p className="text-muted-foreground line-clamp-2 mb-4 group-hover:text-foreground/80 transition-colors">
-                                {project.description}
-                            </p>
-                        </motion.div>
+                    {/* Bottom content */}
+                    <div>
+                        <p className="text-sm text-muted-foreground line-clamp-3 mb-4">
+                            {project.description}
+                        </p>
 
-                        {/* Hidden Drawer Content - Slides Up */}
-                        <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{
-                                opacity: isHovered ? 1 : 0,
-                                height: isHovered ? "auto" : 0
-                            }}
-                            transition={{ duration: 0.3, ease: "easeInOut" }}
-                            className="overflow-hidden"
-                        >
-                            <div className="pt-2 space-y-4">
-                                <div className="flex flex-wrap gap-2">
-                                    {project.tech.slice(0, 4).map((t) => (
-                                        <Badge key={t} variant="secondary" className="bg-secondary/80 backdrop-blur-md">
-                                            {t}
-                                        </Badge>
-                                    ))}
-                                </div>
-
-                                <div className="flex items-center gap-4 pt-2">
-                                    <Button asChild size="sm" variant="default" className="rounded-full shadow-lg shadow-primary/25">
-                                        <Link href={project.github} target="_blank">
-                                            <Github className="mr-2 h-4 w-4" /> Code
-                                        </Link>
-                                    </Button>
-                                    <Button asChild size="sm" variant="outline" className="rounded-full backdrop-blur-md bg-transparent border-white/20 hover:bg-white/10">
-                                        <Link href={`/projects/${project.slug}`}>
-                                            Details <ArrowRight className="ml-2 h-4 w-4" />
-                                        </Link>
-                                    </Button>
-                                </div>
-                            </div>
-                        </motion.div>
+                        <div className="flex flex-wrap gap-2">
+                            {project.tech.slice(0, 3).map((t) => (
+                                <Badge key={t} variant="secondary" className="bg-secondary/80 backdrop-blur-md text-xs">
+                                    {t}
+                                </Badge>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </Card>

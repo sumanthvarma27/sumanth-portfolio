@@ -18,7 +18,7 @@ export function Footer() {
                         <span className="sr-only">GitHub</span>
                     </a>
                     <a
-                        href="https://linkedin.com/in/sumanthvarma27"
+                        href="https://linkedin.com/in/sumanthvarma3009"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="rounded-full bg-secondary p-3 text-secondary-foreground transition-transform hover:scale-110 hover:bg-primary hover:text-primary-foreground"
@@ -27,7 +27,7 @@ export function Footer() {
                         <span className="sr-only">LinkedIn</span>
                     </a>
                     <a
-                        href="mailto:varmasumanth009@gmail.com"
+                        href="mailto:varma.gadiraju2001@gmail.com"
                         className="rounded-full bg-secondary p-3 text-secondary-foreground transition-transform hover:scale-110 hover:bg-primary hover:text-primary-foreground"
                     >
                         <Mail className="h-5 w-5" />

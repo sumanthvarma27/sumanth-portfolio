@@ -34,7 +34,7 @@ export function Contact() {
                                         <div className="rounded-full bg-background/50 p-2">
                                             <Mail className="h-5 w-5" />
                                         </div>
-                                        <a href="mailto:varmasumanth009@gmail.com">varmasumanth009@gmail.com</a>
+                                        <a href="mailto:varma.gadiraju2001@gmail.com">varma.gadiraju2001@gmail.com</a>
                                     </div>
 
                                     <div className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors">
