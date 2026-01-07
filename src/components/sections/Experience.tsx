@@ -15,7 +15,7 @@ import Image from "next/image"
 const experiences = [
     {
         company: "Zymo Solutions",
-        logo: "https://logo.clearbit.com/zymosolutions.com",
+        logo: "/companies/zymo-solutions.jpg",
         role: "Software Development Engineer",
         period: "Jan 2024 - Present",
         location: "Herndon, VA",
@@ -66,7 +66,7 @@ const experiences = [
     },
     {
         company: "Ananth Technologies",
-        logo: "https://logo.clearbit.com/ananthtechnologies.com",
+        logo: "/companies/ananth-technologies.jpg",
         role: "Software Engineer Intern",
         period: "Sep 2022 - May 2023",
         location: "Hyderabad, India",
@@ -103,7 +103,7 @@ const experiences = [
     },
     {
         company: "SRM University, AP",
-        logo: "https://logo.clearbit.com/srmap.edu.in",
+        logo: "/companies/srm-university.jpg",
         role: "Software Development Engineer",
         period: "Jan 2021 - Aug 2022",
         location: "Amaravati, India",

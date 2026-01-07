@@ -1,16 +1,168 @@
 "use client"
 
 import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { ArrowRight, Github, ExternalLink, Zap, Layers } from "lucide-react"
+import { motion } from "framer-motion"
+import { ArrowRight, Github, TrendingUp, Zap, Shield, Database, Clock, Award, CheckCircle2, Activity } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
 
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
-import { projects } from "@/lib/projects"
-import { cn } from "@/lib/utils"
+import { Badge } from "@/components/ui/badge"
+
+// Project data with highlights
+const projects = [
+    {
+        slug: "catering-management-system",
+        title: "AI-Powered Catering Management System",
+        stack: "Python, Django, PostgreSQL, Redis, Celery, AWS",
+        github: "https://github.com/sumanthvarma27/catering-order-assistant",
+        highlights: [
+            {
+                title: "Production Performance",
+                icon: TrendingUp,
+                metrics: [
+                    "99.8% uptime maintained",
+                    "Processes 500+ daily transactions",
+                    "Django REST Framework backend",
+                    "AWS deployment with CI/CD"
+                ]
+            },
+            {
+                title: "Query Optimization",
+                icon: Zap,
+                metrics: [
+                    "85% query performance improvement",
+                    "Response time: 800ms → 120ms",
+                    "PostgreSQL connection pooling",
+                    "Strategic index implementation"
+                ]
+            },
+            {
+                title: "API Integration",
+                icon: Activity,
+                metrics: [
+                    "Square POS integration",
+                    "WhatsApp Business API",
+                    "60% fewer integration errors",
+                    "Comprehensive retry logic"
+                ]
+            }
+        ]
+    },
+    {
+        slug: "real-time-analytics",
+        title: "Real-Time Analytics Platform",
+        stack: "Python, Django, PostgreSQL, Kafka, Docker",
+        github: "https://github.com/sumanthvarma27",
+        highlights: [
+            {
+                title: "Data Processing",
+                icon: Database,
+                metrics: [
+                    "1M+ daily records processed",
+                    "99.5% success rate",
+                    "Kafka data pipeline",
+                    "Automatic retry mechanisms"
+                ]
+            },
+            {
+                title: "Analytics Speed",
+                icon: Zap,
+                metrics: [
+                    "60% faster report generation",
+                    "PostgreSQL query optimization",
+                    "Redis caching implementation",
+                    "Strategic indexing"
+                ]
+            },
+            {
+                title: "DevOps & Monitoring",
+                icon: Activity,
+                metrics: [
+                    "75% improved deployment reliability",
+                    "Docker containerization",
+                    "Datadog + Grafana monitoring",
+                    "Automated alerting system"
+                ]
+            }
+        ]
+    },
+    {
+        slug: "docuvault",
+        title: "DocuVault - Document Management System",
+        stack: "Python, Django, PostgreSQL, React",
+        github: "https://github.com/sumanthvarma27/docuvault",
+        highlights: [
+            {
+                title: "Scale & Reliability",
+                icon: TrendingUp,
+                metrics: [
+                    "1,000+ concurrent users",
+                    "99.9% uptime",
+                    "Full-stack architecture",
+                    "Role-based access control (RBAC)"
+                ]
+            },
+            {
+                title: "Quality & Testing",
+                icon: Shield,
+                metrics: [
+                    "90%+ test coverage",
+                    "50% fewer production bugs",
+                    "Comprehensive pytest testing",
+                    "Automated CI/CD with Jenkins"
+                ]
+            },
+            {
+                title: "Search Performance",
+                icon: Zap,
+                metrics: [
+                    "70% faster search",
+                    "PostgreSQL full-text search",
+                    "Optimized metadata queries",
+                    "Strategic indexing"
+                ]
+            }
+        ]
+    },
+    {
+        slug: "logo-detection-tool",
+        title: "Logo Detection Tool",
+        stack: "Python, YOLOv5, Flask, OpenCV",
+        github: "https://github.com/sumanthvarma27",
+        highlights: [
+            {
+                title: "Detection Accuracy",
+                icon: Award,
+                metrics: [
+                    "98%+ detection accuracy",
+                    "10K+ images processed daily",
+                    "Flask REST API",
+                    "YOLOv5 model integration"
+                ]
+            },
+            {
+                title: "Performance",
+                icon: Clock,
+                metrics: [
+                    "Response time: 250ms → 85ms",
+                    "66% improvement",
+                    "Batch processing with Celery",
+                    "Redis caching layer"
+                ]
+            },
+            {
+                title: "Quality Assurance",
+                icon: Shield,
+                metrics: [
+                    "45% fewer production issues",
+                    "90% code coverage",
+                    "Comprehensive pytest testing",
+                    "Performance monitoring"
+                ]
+            }
+        ]
+    }
+]
 
 export function Projects() {
     return (
@@ -27,17 +179,17 @@ export function Projects() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="mb-16 text-center md:text-left"
+                    className="mb-16 text-center"
                 >
                     <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-5xl mb-6">
                         Featured Projects<span className="text-primary">.</span>
                     </h2>
-                    <p className="text-muted-foreground text-lg md:text-xl max-w-2xl leading-relaxed">
+                    <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
                         A curated selection of my work in distributed systems, AI agents, and full-stack engineering.
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+                <div className="space-y-16 max-w-7xl mx-auto">
                     {projects.map((project, index) => (
                         <ProjectCard key={project.slug} project={project} index={index} />
                     ))}
@@ -52,69 +204,78 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
 
     return (
         <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="aspect-square w-full"
+            transition={{ duration: 0.6, delay: index * 0.1 }}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <Card className="h-full w-full relative overflow-hidden ring-1 ring-white/10 bg-card/50 backdrop-blur-sm border-0 group cursor-pointer transition-all duration-500 hover:shadow-2xl hover:shadow-primary/20">
-                {/* Background Pattern/Gradient (Fallback for image) */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-blue-500/5 transition-opacity duration-500" />
-
-                {/* Project Image Background - Scale on Hover */}
-                {/* Note: Using a gradient overlay to ensure text readability */}
-                <div className="absolute inset-0 z-0">
-                    <div className={cn(
-                        "absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent z-10 transition-all duration-500",
-                        isHovered ? "opacity-95 bg-background/95" : "opacity-60"
-                    )} />
-                    {/* If actual images differ from these paths, next/image might show alt. 
-                        For now, we assume these paths might be placeholders, so we add a fallback stylistic approach */}
-                    <div className={cn(
-                        "w-full h-full bg-grid-white/[0.02] [mask-image:linear-gradient(to_bottom,transparent,black)] transition-transform duration-700 ease-out",
-                        isHovered ? "scale-110" : "scale-100"
-                    )} />
-                </div>
-
-                <div className="absolute inset-0 z-20 flex flex-col p-6 h-full justify-between">
-                    {/* Top Content */}
-                    <div>
-                        <div className="flex justify-between items-start mb-4">
-                            <div className="p-2 bg-primary/10 rounded-lg text-primary">
-                                <Layers className="h-5 w-5" />
+            <Card className="relative overflow-hidden border border-white/10 bg-card/30 backdrop-blur-sm hover:border-primary/30 transition-all duration-500">
+                <CardContent className="p-8 md:p-10">
+                    {/* Header */}
+                    <div className="mb-8">
+                        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
+                            <div>
+                                <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                                    {project.title}
+                                </h3>
+                                <p className="text-sm text-muted-foreground">
+                                    <span className="font-semibold">Stack:</span> {project.stack}
+                                </p>
                             </div>
-                            <div className="flex gap-2">
-                                <Link href={project.github} target="_blank" className="p-2 hover:text-primary transition-colors text-muted-foreground">
-                                    <Github className="h-5 w-5" />
-                                </Link>
-                                <Link href={`/projects/${project.slug}`} className="p-2 hover:text-primary transition-colors text-muted-foreground">
-                                    <ArrowRight className="h-5 w-5" />
-                                </Link>
-                            </div>
-                        </div>
-                        <h3 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-                            {project.title}
-                        </h3>
-                    </div>
-
-                    {/* Bottom content */}
-                    <div>
-                        <p className="text-sm text-muted-foreground line-clamp-3 mb-4">
-                            {project.description}
-                        </p>
-
-                        <div className="flex flex-wrap gap-2">
-                            {project.tech.slice(0, 3).map((t) => (
-                                <Badge key={t} variant="secondary" className="bg-secondary/80 backdrop-blur-md text-xs">
-                                    {t}
-                                </Badge>
-                            ))}
+                            <Link
+                                href={project.github}
+                                target="_blank"
+                                className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group w-fit"
+                            >
+                                <Github className="h-5 w-5" />
+                                <span className="group-hover:underline">View Code</span>
+                                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                            </Link>
                         </div>
                     </div>
-                </div>
+
+                    {/* Highlights Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        {project.highlights.map((highlight, idx) => (
+                            <motion.div
+                                key={idx}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.4, delay: index * 0.1 + idx * 0.1 }}
+                            >
+                                <Card className="h-full border border-white/5 bg-card/50 backdrop-blur-sm hover:border-primary/20 hover:bg-card/70 transition-all duration-300 group">
+                                    <CardContent className="p-6">
+                                        {/* Icon and Title */}
+                                        <div className="flex items-center gap-3 mb-4">
+                                            <div className="p-2 rounded-lg bg-primary/10 text-primary group-hover:bg-primary/20 transition-colors">
+                                                <highlight.icon className="h-5 w-5" />
+                                            </div>
+                                            <h4 className="font-semibold text-foreground text-sm">
+                                                {highlight.title}
+                                            </h4>
+                                        </div>
+
+                                        {/* Metrics */}
+                                        <ul className="space-y-2.5">
+                                            {highlight.metrics.map((metric, metricIdx) => (
+                                                <li
+                                                    key={metricIdx}
+                                                    className="flex items-start gap-2 text-sm text-muted-foreground"
+                                                >
+                                                    <CheckCircle2 className="h-4 w-4 text-primary/60 mt-0.5 flex-shrink-0" />
+                                                    <span>{metric}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </CardContent>
+                                </Card>
+                            </motion.div>
+                        ))}
+                    </div>
+                </CardContent>
             </Card>
         </motion.div>
     )
