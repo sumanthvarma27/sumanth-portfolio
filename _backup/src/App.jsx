@@ -1,3 +1,6 @@
+import React from "react";
+import "./App.css";
+
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -11,16 +14,18 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="overflow-x-hidden">
+    <div className="app-root">
       <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <Experience />
-      <Projects />
-      <Education />
-      <Certifications />
-      <Contact />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Experience />
+        <Projects />
+        <Education />
+        <Certifications />
+        <Contact />
+      </main>
       <Footer />
     </div>
   );
