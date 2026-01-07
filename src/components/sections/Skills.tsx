@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 
-// Tech stack organized by categories with icon paths - using YOUR actual skills
+// Tech stack organized by categories with icon paths
 const techStack = {
     "LANGUAGES": [
         { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
@@ -17,10 +17,10 @@ const techStack = {
         { name: "Django", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" },
         { name: "Django REST", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" },
         { name: "FastAPI", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" },
-        { name: "Flask", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original-wordmark.svg" },
+        { name: "Flask", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg", invert: true },
         { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
         { name: "Redux", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" },
-        { name: "Express.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original-wordmark.svg" },
+        { name: "Express.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg", invert: true },
         { name: "Celery", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
     ],
     "DATABASES & PROCESSING": [
@@ -85,7 +85,7 @@ export function Skills() {
                                 {category}
                             </h3>
                             <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
-                                {technologies.map((tech, index) => (
+                                {technologies.map((tech: any, index) => (
                                     <motion.div
                                         key={tech.name}
                                         initial={{ opacity: 0, scale: 0.8 }}
@@ -110,7 +110,7 @@ export function Skills() {
                                                     src={tech.icon}
                                                     alt={tech.name}
                                                     fill
-                                                    className="object-contain filter brightness-90 group-hover:brightness-110 transition-all duration-300"
+                                                    className={`object-contain transition-all duration-300 ${tech.invert ? 'brightness-0 invert' : 'brightness-90'} group-hover:brightness-110`}
                                                     unoptimized
                                                 />
                                             </div>

@@ -19,6 +19,13 @@ const experiences = [
         role: "Software Development Engineer",
         period: "Jan 2024 - Present",
         location: "Herndon, VA",
+        techStack: [
+            { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+            { name: "Django", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" },
+            { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+            { name: "Redis", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
+            { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+        ],
         achievements: [
             {
                 title: "Performance Optimization",
@@ -70,6 +77,12 @@ const experiences = [
         role: "Software Engineer Intern",
         period: "Sep 2022 - May 2023",
         location: "Hyderabad, India",
+        techStack: [
+            { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+            { name: "Django", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" },
+            { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+            { name: "Redis", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
+        ],
         achievements: [
             {
                 title: "API Performance",
@@ -107,6 +120,12 @@ const experiences = [
         role: "Software Development Engineer",
         period: "Jan 2021 - Aug 2022",
         location: "Amaravati, India",
+        techStack: [
+            { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+            { name: "Flask", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg", invert: true },
+            { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+            { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+        ],
         achievements: [
             {
                 title: "Automation",
@@ -197,9 +216,29 @@ export function Experience() {
                                             <p className="text-base md:text-lg font-medium text-foreground/90">
                                                 {exp.company}
                                             </p>
-                                            <p className="text-sm text-muted-foreground flex items-center gap-1 mt-1">
-                                                <MapPin className="h-3 w-3" /> {exp.location}
-                                            </p>
+                                            <div className="flex flex-wrap items-center gap-4 mt-1">
+                                                <p className="text-sm text-muted-foreground flex items-center gap-1">
+                                                    <MapPin className="h-3 w-3" /> {exp.location}
+                                                </p>
+                                                <div className="flex items-center gap-2 border-l border-white/10 pl-4">
+                                                    {exp.techStack.map((tech, idx) => (
+                                                        <div key={idx} className="relative w-4 h-4 group/tech opacity-70 hover:opacity-100 transition-opacity">
+                                                            <Image
+                                                                src={tech.icon}
+                                                                alt={tech.name}
+                                                                fill
+                                                                className={`object-contain ${tech.hasOwnProperty('invert') && (tech as any).invert ? 'brightness-0 invert' : 'brightness-90'}`}
+                                                                unoptimized
+                                                            />
+                                                            <div className="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover/tech:opacity-100 transition-opacity pointer-events-none">
+                                                                <span className="text-[10px] bg-card px-2 py-0.5 rounded border border-white/10 whitespace-nowrap">
+                                                                    {tech.name}
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="flex items-center justify-end">
