@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { MapPin, Shield, Zap, Activity, Database, GitBranch, Target } from "lucide-react"
+import { MapPin, Shield, Zap, Activity, Database, GitBranch, Target, LayoutTemplate, MonitorSmartphone, Server, Mic, BrainCircuit } from "lucide-react"
 
 import {
     Card,
@@ -14,153 +14,126 @@ import Image from "next/image"
 
 const experiences = [
     {
-        company: "Zymo Solutions",
-        logo: "/companies/zymo-solutions.jpg",
-        role: "Software Development Engineer",
-        period: "Jan 2024 - Present",
-        location: "Herndon, VA",
+        company: "Asian Community Development Center",
+        logo: "/companies/acdc.png",
+        role: "Software Development Engineer I",
+        period: "June 2025 – Present",
+        location: "Remote",
         techStack: [
-            { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
-            { name: "Django", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" },
+            { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+            { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
             { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
-            { name: "Redis", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
+            { name: "AWS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg", invert: true },
             { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
         ],
         achievements: [
             {
-                title: "Performance Optimization",
-                description: "Reduced API response time by 35% and improved throughput by 50%. Optimized PostgreSQL queries with strategic indexing",
-                metric: "10K+ concurrent users",
+                title: "Website Revamp",
+                description: "Led complete modernization of legacy system. Designed component-based architecture with reusable UI library and multilingual support",
+                metric: "95+ Lighthouse",
+                icon: LayoutTemplate,
+                color: "text-blue-500"
+            },
+            {
+                title: "Backend Performance",
+                description: "Optimized API response time from 900ms to 315ms (65% reduction) using Redis caching. Built secure node.js APIs with role-based access",
+                metric: "65% faster APIs",
                 icon: Zap,
                 color: "text-yellow-500"
             },
             {
-                title: "Background Processing",
-                description: "Built Celery + Redis workflow system with 99.9% task success rate. Handles data sync, reports, and notifications",
-                metric: "50K+ daily jobs",
-                icon: Activity,
+                title: "Frontend Optimization",
+                description: "Reduced initial load time from 4.8s to 1.2s (75% improvement) through code-splitting and lazy loading. Achieved WCAG 2.1 AA accessibility",
+                metric: "75% faster load",
+                icon: MonitorSmartphone,
                 color: "text-green-500"
             },
             {
-                title: "Architecture & Delivery",
-                description: "Created reusable domain models, reduced code duplication across 5 microservices. Simplified onboarding for new engineers",
-                metric: "40% faster delivery",
-                icon: Target,
-                color: "text-blue-500"
-            },
-            {
-                title: "CI/CD Pipeline",
-                description: "Automated deployments with Jenkins & GitHub Actions. 85%+ code coverage with pytest, eliminated manual deployment errors",
-                metric: "60% faster deploys",
+                title: "DevOps Automation",
+                description: "Migrated to automated CI/CD with GitHub Actions. Reduced Docker image size by 60% and achieved 85%+ code coverage with Jest/Cypress",
+                metric: "60% smaller images",
                 icon: GitBranch,
                 color: "text-purple-500"
-            },
-            {
-                title: "Analytics Performance",
-                description: "Cut report generation time by 60%. Implemented Redis caching layer and optimized 15+ dashboard endpoints",
-                metric: "60% improvement",
-                icon: Database,
-                color: "text-orange-500"
-            },
-            {
-                title: "System Reliability",
-                description: "Improved uptime from 95% to 99.5%. Implemented comprehensive error handling, retry logic and rate limiting",
-                metric: "99.5% uptime",
-                icon: Shield,
-                color: "text-red-500"
             },
         ]
     },
     {
-        company: "Ananth Technologies",
-        logo: "/companies/ananth-technologies.jpg",
-        role: "Software Engineer Intern",
-        period: "Sep 2022 - May 2023",
-        location: "Hyderabad, India",
+        company: "Paytm",
+        logo: "/companies/paytm.png",
+        role: "Software Development Engineer",
+        period: "Jan 2022 – May 2023",
+        location: "Noida, India",
         techStack: [
-            { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
-            { name: "Django", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" },
+            { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+            { name: "Spring Boot", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" },
             { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
             { name: "Redis", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
+            { name: "Kafka", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg" },
         ],
         achievements: [
             {
-                title: "API Performance",
-                description: "40% performance improvement through Redis caching implementation and MySQL query optimization. Refactored database schemas",
-                metric: "40% faster",
-                icon: Zap,
-                color: "text-yellow-500"
-            },
-            {
-                title: "Payment Integration",
-                description: "Reduced payment failures by 25%. Integrated third-party payment APIs with SMS notification system and comprehensive error handling",
-                metric: "25% reduction",
-                icon: Shield,
-                color: "text-green-500"
-            },
-            {
-                title: "Team Standards",
-                description: "Established Django REST coding standards and implemented JWT authentication. Created reusable API patterns",
-                metric: "30% faster dev",
-                icon: GitBranch,
+                title: "High-Scale Processing",
+                description: "Handled 100K+ daily toll transactions across 500+ locations. Integrated with NPCI system and third-party payment gateways",
+                metric: "100K+ daily txns",
+                icon: Activity,
                 color: "text-blue-500"
-            },
-            {
-                title: "Code Quality",
-                description: "Reduced bugs by 35% through active code review participation, Agile ceremony contributions, and best practices implementation",
-                metric: "35% fewer bugs",
-                icon: Target,
-                color: "text-purple-500"
-            },
-        ]
-    },
-    {
-        company: "SRM University, AP",
-        logo: "/companies/srm-university.jpg",
-        role: "Software Development Engineer",
-        period: "Jan 2021 - Aug 2022",
-        location: "Amaravati, India",
-        techStack: [
-            { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
-            { name: "Flask", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg", invert: true },
-            { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
-            { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-        ],
-        achievements: [
-            {
-                title: "Automation",
-                description: "Reduced manual entry time by 70%. Built Python automation scripts with batch validation workflows",
-                metric: "100K+ records",
-                icon: Zap,
-                color: "text-yellow-500"
             },
             {
                 title: "Database Optimization",
-                description: "45% performance improvement through optimized SQLite and PostgreSQL schemas. Implemented proper indexing and refactored 20+ slow queries",
-                metric: "45% faster",
+                description: "Reduced query execution time by 60% (850ms to 340ms) through strategic indexing and resolving N+1 query patterns",
+                metric: "60% faster queries",
                 icon: Database,
                 color: "text-green-500"
             },
             {
-                title: "Data Visualization",
-                description: "Increased user engagement by 50%. Built interactive dashboards with Flask + JavaScript stack and custom reporting capabilities",
-                metric: "50% engagement",
-                icon: Activity,
+                title: "Microservices",
+                description: "Contributed to migration from monolith to domain-driven microservices. Reduced API latency by 45% using Redis caching layer",
+                metric: "45% lower latency",
+                icon: Server,
+                color: "text-orange-500"
+            },
+            {
+                title: "Productivity Tools",
+                description: "Automated data validation reducing manual reconciliation time from 6 hours to 90 mins. Created comprehensive Swagger documentation",
+                metric: "75% time cost saved",
+                icon: Target,
+                color: "text-purple-500"
+            },
+        ]
+    },
+    {
+        company: "SRM University AP",
+        logo: "/companies/srm-university.jpg",
+        role: "Research Intern",
+        period: "Dec 2020 – Dec 2021",
+        location: "Amaravati, India",
+        techStack: [
+            { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+            { name: "Django", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" },
+            { name: "TensorFlow", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" },
+            { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+        ],
+        achievements: [
+            {
+                title: "Speech Research",
+                description: "Developed multilingual speech data platform collecting data from 500+ participants. Collaborated with 5 departments on protocols",
+                metric: "500+ participants",
+                icon: Mic,
                 color: "text-blue-500"
             },
             {
-                title: "System Reliability",
-                description: "99.7% uptime achieved with secure authentication. Served 10K+ users with comprehensive error handling",
-                metric: "99.7% uptime",
-                icon: Shield,
+                title: "ML Engineering",
+                description: "Engineered speech-to-speech translation with 95% accuracy using Seq2Seq models. Built audio preprocessing pipeline",
+                metric: "95% accuracy",
+                icon: BrainCircuit,
                 color: "text-purple-500"
             },
             {
-                title: "Team Leadership",
-                description: "Created technical documentation and established coding standards. Mentored 2 junior developers",
-                metric: "40% faster deployment",
-                icon: Target,
-                color: "text-orange-500"
+                title: "System Performance",
+                description: "Reduced server load 20% and latency from 3.5s to 2.8s through indexing and schema normalization",
+                metric: "20% load reduction",
+                icon: Zap,
+                color: "text-yellow-500"
             },
         ]
     },
