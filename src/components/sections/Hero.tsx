@@ -54,7 +54,7 @@ export function Hero() {
                 >
                     {/* Simple ticker or static for now, implementing dynamic typing next */}
                     <div className="animate-fade-in-up">
-                        Software Development Engineer <span className="text-primary">@ Zymo Solutions</span>
+                        Software Development Engineer <span className="text-primary"></span>
                     </div>
                 </motion.div>
 

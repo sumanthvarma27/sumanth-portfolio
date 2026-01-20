@@ -32,7 +32,7 @@ export function About() {
                         </p>
 
                         <div className="flex flex-wrap gap-2">
-                            <Badge variant="outline" className="text-sm py-1">🚀 5+ Years Experience</Badge>
+                            <Badge variant="outline" className="text-sm py-1">🚀 3+ Years Experience</Badge>
                             <Badge variant="outline" className="text-sm py-1">🤖 AI/ML Integration</Badge>
                             <Badge variant="outline" className="text-sm py-1">☁️ Cloud Native</Badge>
                         </div>
