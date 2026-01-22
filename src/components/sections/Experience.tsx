@@ -14,46 +14,46 @@ import Image from "next/image"
 
 const experiences = [
     {
-        company: "Asian Community Development Center",
-        logo: "/companies/acdc.png",
-        role: "Software Development Engineer I",
-        period: "June 2025 – Present",
-        location: "Remote",
+        company: "Zymo Solutions (Contractor for GEICO)",
+        logo: "/companies/zymo-solutions.jpg",
+        role: "Software Development Engineer",
+        period: "Jan 2024 – Present",
+        location: "Chevy Chase, MD",
         techStack: [
-            { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-            { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-            { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
-            { name: "AWS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg", invert: true },
-            { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+            { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+            { name: "Django", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" },
+            { name: "FastAPI", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" },
+            { name: "Kubernetes", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" },
+            { name: "Redis", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
         ],
         achievements: [
             {
-                title: "Website Revamp",
-                description: "Led complete modernization of legacy system. Designed component-based architecture with reusable UI library and multilingual support",
-                metric: "95+ Lighthouse",
-                icon: LayoutTemplate,
-                color: "text-blue-500"
+                title: "GenAI & Backend Systems",
+                description: "Built backend services and APIs for LLM-powered workflows, retrieval pipelines, and model evaluation endpoints",
+                metric: "GenAI Production",
+                icon: BrainCircuit,
+                color: "text-purple-500"
             },
             {
-                title: "Backend Performance",
-                description: "Optimized API response time from 900ms to 315ms (65% reduction) using Redis caching. Built secure node.js APIs with role-based access",
-                metric: "65% faster APIs",
+                title: "Performance Optimization",
+                description: "Reduced end-to-end response latency by 60%+ through Redis caching, query optimization, and async processing",
+                metric: "60% Faster",
                 icon: Zap,
                 color: "text-yellow-500"
             },
             {
-                title: "Frontend Optimization",
-                description: "Reduced initial load time from 4.8s to 1.2s (75% improvement) through code-splitting and lazy loading. Achieved WCAG 2.1 AA accessibility",
-                metric: "75% faster load",
-                icon: MonitorSmartphone,
-                color: "text-green-500"
+                title: "Cloud Infrastructure",
+                description: "Designed containerized ML services on Kubernetes with autoscaling policies and rolling deployments for reliable inference",
+                metric: "Scalable Infra",
+                icon: Server,
+                color: "text-blue-500"
             },
             {
-                title: "DevOps Automation",
-                description: "Migrated to automated CI/CD with GitHub Actions. Reduced Docker image size by 60% and achieved 85%+ code coverage with Jest/Cypress",
-                metric: "60% smaller images",
-                icon: GitBranch,
-                color: "text-purple-500"
+                title: "Secure Architecture",
+                description: "Implemented secure REST APIs (Python/Django/FastAPI) with role-based access controls and structured logging",
+                metric: "Enterprise Security",
+                icon: Shield,
+                color: "text-green-500"
             },
         ]
     },
@@ -74,28 +74,28 @@ const experiences = [
             {
                 title: "High-Scale Processing",
                 description: "Handled 100K+ daily toll transactions across 500+ locations. Integrated with NPCI system and third-party payment gateways",
-                metric: "100K+ daily txns",
+                metric: "100K+ Daily Txns",
                 icon: Activity,
                 color: "text-blue-500"
             },
             {
                 title: "Database Optimization",
                 description: "Reduced query execution time by 60% (850ms to 340ms) through strategic indexing and resolving N+1 query patterns",
-                metric: "60% faster queries",
+                metric: "60% Faster Queries",
                 icon: Database,
                 color: "text-green-500"
             },
             {
                 title: "Microservices",
                 description: "Contributed to migration from monolith to domain-driven microservices. Reduced API latency by 45% using Redis caching layer",
-                metric: "45% lower latency",
+                metric: "45% Lower Latency",
                 icon: Server,
                 color: "text-orange-500"
             },
             {
                 title: "Productivity Tools",
-                description: "Automated data validation reducing manual reconciliation time from 6 hours to 90 mins. Created comprehensive Swagger documentation",
-                metric: "75% time cost saved",
+                description: "Automated data validation reducing manual reconciliation time from 6 hours to 90 mins (75% improvement)",
+                metric: "75% Time Saved",
                 icon: Target,
                 color: "text-purple-500"
             },
@@ -105,7 +105,7 @@ const experiences = [
         company: "SRM University AP",
         logo: "/companies/srm-university.jpg",
         role: "Research Intern",
-        period: "Dec 2020 – Dec 2021",
+        period: "August 2020 – Dec 2021",
         location: "Amaravati, India",
         techStack: [
             { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
@@ -116,22 +116,22 @@ const experiences = [
         achievements: [
             {
                 title: "Speech Research",
-                description: "Developed multilingual speech data platform collecting data from 500+ participants. Collaborated with 5 departments on protocols",
-                metric: "500+ participants",
+                description: "Developed multilingual speech data platform collecting data from 500+ participants across 8 Indian languages",
+                metric: "500+ Participants",
                 icon: Mic,
                 color: "text-blue-500"
             },
             {
                 title: "ML Engineering",
-                description: "Engineered speech-to-speech translation with 95% accuracy using Seq2Seq models. Built audio preprocessing pipeline",
-                metric: "95% accuracy",
+                description: "Engineered speech-to-speech translation with 95% accuracy on 10K+ utterances using Seq2Seq models",
+                metric: "95% Accuracy",
                 icon: BrainCircuit,
                 color: "text-purple-500"
             },
             {
                 title: "System Performance",
                 description: "Reduced server load 20% and latency from 3.5s to 2.8s through indexing and schema normalization",
-                metric: "20% load reduction",
+                metric: "20% Load Reduction",
                 icon: Zap,
                 color: "text-yellow-500"
             },
