@@ -65,11 +65,11 @@ export function Contact() {
                             <form className="space-y-4">
                                 <div className="space-y-2">
                                     <label htmlFor="name" className="text-sm font-medium">Name</label>
-                                    <Input id="name" placeholder="John Doe" className="bg-background/50" />
+                                    <Input id="name" placeholder="" className="bg-background/50" />
                                 </div>
                                 <div className="space-y-2">
                                     <label htmlFor="email" className="text-sm font-medium">Email</label>
-                                    <Input id="email" type="email" placeholder="john@example.com" className="bg-background/50" />
+                                    <Input id="email" type="email" placeholder="" className="bg-background/50" />
                                 </div>
                                 <div className="space-y-2">
                                     <label htmlFor="message" className="text-sm font-medium">Message</label>

@@ -14,8 +14,8 @@ import Image from "next/image"
 
 const experiences = [
     {
-        company: "Zymo Solutions (Contractor for GEICO)",
-        logo: "/companies/zymo-solutions.jpg",
+        company: "GEICO (Contract)",
+        logo: "/companies/geico.png",
         role: "Software Development Engineer",
         period: "Jan 2024 – Present",
         location: "Chevy Chase, MD",

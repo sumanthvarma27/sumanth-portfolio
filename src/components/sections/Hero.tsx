@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
-import { ArrowDown, Github, Linkedin, Mail, FileText } from "lucide-react"
+import { ArrowDown, Github, Linkedin, Mail } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -76,12 +76,6 @@ export function Hero() {
                 >
                     <Button asChild size="lg" className="h-12 rounded-full px-8 text-base">
                         <Link href="#projects">View Projects</Link>
-                    </Button>
-                    <Button asChild variant="outline" size="lg" className="h-12 rounded-full px-8 text-base backdrop-blur-sm">
-                        <Link href="/resume.pdf" target="_blank">
-                            <FileText className="mr-2 h-4 w-4" />
-                            Download Resume
-                        </Link>
                     </Button>
                 </motion.div>
 

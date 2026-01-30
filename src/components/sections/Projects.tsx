@@ -161,6 +161,120 @@ const projects = [
                 ]
             }
         ]
+    },
+    {
+        slug: "rag-document-assistant",
+        title: "RAG-Powered Document Assistant",
+        stack: "Python, LangChain, Vector Database, Flask",
+        github: "#",
+        highlights: [
+            {
+                title: "LLM Accuracy",
+                icon: Shield,
+                metrics: [
+                    "35% fewer hallucinations",
+                    "Grounded LLM responses",
+                    "Retrieval-Augmented Generation",
+                    "Factual data grounding"
+                ]
+            },
+            {
+                title: "Search Performance",
+                icon: Database,
+                metrics: [
+                    "90% retrieval accuracy",
+                    "10K+ documents processed",
+                    "Semantic search with embeddings",
+                    "Vector database integration"
+                ]
+            },
+            {
+                title: "API Architecture",
+                icon: Zap,
+                metrics: [
+                    "RESTful API endpoints",
+                    "Flask backend",
+                    "Web application interface",
+                    "Scalable architecture"
+                ]
+            }
+        ]
+    },
+    {
+        slug: "ai-chatbot-member-services",
+        title: "AI Chatbot for Member Services",
+        stack: "Python, Azure AI, React, Node.js",
+        github: "#",
+        highlights: [
+            {
+                title: "Resolution Rate",
+                icon: TrendingUp,
+                metrics: [
+                    "85% resolution rate",
+                    "Conversational AI agent",
+                    "Prompt engineering techniques",
+                    "Customer inquiry handling"
+                ]
+            },
+            {
+                title: "NLP Capabilities",
+                icon: Activity,
+                metrics: [
+                    "Intent recognition",
+                    "Entity extraction",
+                    "Tokenization processing",
+                    "Transformer models"
+                ]
+            },
+            {
+                title: "Full-Stack Integration",
+                icon: Zap,
+                metrics: [
+                    "React frontend",
+                    "Node.js backend",
+                    "API integration",
+                    "Seamless UX"
+                ]
+            }
+        ]
+    },
+    {
+        slug: "fraud-detection-pipeline",
+        title: "Fraud Detection ML Pipeline",
+        stack: "Python, Databricks, PostgreSQL, Docker",
+        github: "#",
+        highlights: [
+            {
+                title: "Data Processing",
+                icon: Database,
+                metrics: [
+                    "500K+ daily transactions",
+                    "Structured data ingestion",
+                    "Unstructured data processing",
+                    "Databricks pipeline"
+                ]
+            },
+            {
+                title: "Model Governance",
+                icon: Shield,
+                metrics: [
+                    "Bias detection",
+                    "Transparency measures",
+                    "Compliance documentation",
+                    "Model governance framework"
+                ]
+            },
+            {
+                title: "DevOps & Deployment",
+                icon: Activity,
+                metrics: [
+                    "CI/CD with Docker",
+                    "Git version control",
+                    "Agile sprint development",
+                    "Iterative improvements"
+                ]
+            }
+        ]
     }
 ]
 
