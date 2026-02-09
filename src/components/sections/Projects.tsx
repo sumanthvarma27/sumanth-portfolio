@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { ArrowRight, Github, TrendingUp, Zap, Shield, Database, Clock, Award, CheckCircle2, Activity } from "lucide-react"
+import { ArrowRight, Github, TrendingUp, Zap, Shield, Database, Clock, Award, CheckCircle2, Activity, Workflow, Brain, Globe } from "lucide-react"
 import Link from "next/link"
 
 import { Card, CardContent } from "@/components/ui/card"
@@ -10,6 +10,44 @@ import { Badge } from "@/components/ui/badge"
 
 // Project data with highlights
 const projects = [
+    {
+        slug: "travel-book",
+        title: "AI-Powered Multi-Agent Travel Planner (Travel-Book)",
+        stack: "Python, TypeScript, Next.js 16, FastAPI, LangGraph, Llama 3.3",
+        github: "https://github.com/sumanthvarma27/Travel-Book.git",
+        highlights: [
+            {
+                title: "Multi-Agent Orchestration",
+                icon: Workflow,
+                metrics: [
+                    "7 specialized AI agents (DAG pipeline)",
+                    "LangGraph state machine framework",
+                    "Context-aware decision making",
+                    "Mirrors real-world workflows"
+                ]
+            },
+            {
+                title: "Real-Time Intelligence",
+                icon: Brain,
+                metrics: [
+                    "Groq API (Llama 3.3 70B) inference",
+                    "Sub-second response times",
+                    "DuckDuckGo live data augmentation",
+                    "RAG-adjacent pattern"
+                ]
+            },
+            {
+                title: "Full-Stack Experience",
+                icon: Globe,
+                metrics: [
+                    "Production-quality plans < 60s",
+                    "Interactive 3D UI (Three.js/Framer)",
+                    "PDF & JSON export capabilities",
+                    "10+ booking platform integrations"
+                ]
+            }
+        ]
+    },
     {
         slug: "catering-management-system",
         title: "AI-Powered Catering Management System",

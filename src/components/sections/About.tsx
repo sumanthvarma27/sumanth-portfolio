@@ -53,18 +53,7 @@ export function About() {
                             </CardContent>
                         </Card>
 
-                        <Card className="glass border-white/10 transition-colors hover:border-primary/50">
-                            <CardContent className="flex items-start gap-4 p-6">
-                                <div className="rounded-full bg-primary/10 p-3 text-primary">
-                                    <GraduationCap className="h-6 w-6" />
-                                </div>
-                                <div>
-                                    <h4 className="font-semibold">Bachelor of Technology in CSE</h4>
-                                    <p className="text-sm text-muted-foreground">SRM University, AP</p>
-                                    <p className="text-xs text-muted-foreground mt-1">May 2023 • Amaravati, India</p>
-                                </div>
-                            </CardContent>
-                        </Card>
+
 
                         <Card className="glass border-white/10 transition-colors hover:border-primary/50">
                             <CardContent className="flex items-start gap-4 p-6">
